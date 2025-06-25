@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Connexion - CleanBox</title>
+  <link rel="stylesheet" href="{% static 'messagerie/css/connexion.css' %}" />
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="nav-left">CleanBox</div>
+    <ul class="nav-right">
+      <li><a href="{% url 'accueil' %}">Accueil</a></li>
+      <li><a href="{% url 'connexion' %}" class="active">Connexion</a></li>
+      <li><a href="{% url 'inscription' %}">Inscription</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Connexion</h2>
+
+  <form method="post" action="">
+    {% csrf_token %}
+    <label for="username">Nom d'utilisateur :</label>
+    <input type="text" id="username" name="username" required />
+
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" name="password" required />
+
+    <button type="submit">Se connecter</button>
+  </form>
+</main>
+
+<footer>
+  &copy; 2025 CleanBox - Tous droits réservés
+</footer>
+
+</body>
+</html>
