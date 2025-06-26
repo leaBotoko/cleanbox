@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CleanBox - Dashboard</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/dashboard.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CleanBox</div>
+        <div class="user-actions">
+              <a href="#">Accueil</a>
+            <a href="#">Paramètres</a>
+            <a href="#">Déconnexion</a>
+vyµ*    </header>
+
+    <div class="container">
+
+        <!-- ✅ Sidebar à gauche -->
+        <aside class="sidebar">
+            <ul>
+                <li><a href="">📨 Messages envoyés</a></li>
+                <li><a href="">🛡️ Fichiers scannés</a></li>
+                <li><a href="">⏰ Historique connexions</a></li>
+                <li><a href="#">⚙️ Paramètres</a></li>
+                <li><a href="#">🚪 Déconnexion</a></li>
+               
+            </ul>
+        </aside>
+
+        <!-- ✅ Contenu principal à droite -->
+        <main class="main-content">
+            <h1>Bienvenue dans votre tableau de bord</h1>
+            <p>Depuis cet espace, vous pouvez suivre l'activité de votre compte.</p>
+
+            <div class="stats">
+                <div class="stat">📨 Messages envoyés : 12</div>
+                <div class="stat">🛡️ Fichiers scannés : 8</div>
+                <div class="stat">⏰ Dernière connexion : Aujourd'hui</div>
+            </div>
+        </main>
+
+    </div>
+
+</body>
+</html>

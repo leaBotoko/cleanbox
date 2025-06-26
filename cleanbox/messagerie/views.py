@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import InscriptionForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 def inscription(request):
     if request.method == 'POST':
@@ -18,6 +19,14 @@ def accueil(request):
     return render(request, 'messagerie/accueil.html')
 def connexion(request):
     return render(request, 'messagerie/connexion.html')
+from django.shortcuts import render
+
+
+# Vue pour le dashboard utilisateur
+#@login_required
+def dashboard(request):
+    return render(request, 'messagerie/dashboard.html')
+
 
 
 
