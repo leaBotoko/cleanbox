@@ -16,7 +16,7 @@ body {
 }
 
 /* Navbar header */
- header {
+header {
       background-color: #007acc;
       color: white;
       padding: 1rem 2rem;
@@ -48,10 +48,8 @@ body {
     nav ul li a:hover {
       color: #cce7ff;
     }
-
-
 /* Main container */
-main {
+  main {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -65,7 +63,7 @@ main {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 64, 128, 0.2);
   width: 100%;
-  max-width: 100px;
+  max-width: 400px;
 }
 
 .inscription-container h1 {
