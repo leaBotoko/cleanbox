@@ -26,6 +26,22 @@ from django.shortcuts import render
 #@login_required
 def dashboard(request):
     return render(request, 'messagerie/dashboard.html')
+def nouveau_message(request):
+    if request.method == 'POST':
+        destinataire = request.POST.get('destinataire')
+        objet = request.POST.get('objet')
+        contenu = request.POST.get('contenu')
+        fichier = request.FILES.get('fichier')
+
+        #  analyse  texte + analyser le fichier (malware / phishing)
+
+        messages.success(request, "Message envoyé avec succès.")
+        return redirect('nouveau_message')  # Redirection après envoi
+
+    return render(request, 'messagerie/nouveau_message.html')
+
+def historique_connexions(request):
+    return render(request, 'messagerie/historique_connexions.html')
 
 
 

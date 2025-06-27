@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouveau message - CleanBox</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/nouveau_message.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="logo">CleanBox</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+            <li><a href="#">Déconnexion</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>📨 Nouveau message</h2>
+
+    {% if messages %}
+        <div class="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Destinataire :</label>
+        <input type="text" name="destinataire" required placeholder="Nom d'utilisateur...">
+
+        <label>Objet :</label>
+        <input type="text" name="objet" placeholder="Sujet du message...">
+
+        <label>Message :</label>
+        <textarea name="contenu" rows="6" placeholder="Écris ton message ici..."></textarea>
+
+        <div class="file-upload">
+            📎 Choisir un fichier :
+            <input type="file" name="fichier">
+        </div>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CleanBox - Historique des connexions</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/historique_connexions.css' %}">
+</head>
+<body>
+    <header>
+        <h1>CleanBox</h1>
+        <nav>
+            <a href="{% url 'dashboard' %}">Retour au Dashboard</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>⏰ Historique des connexions</h2>
+        <p>Voici vos dernières connexions :</p>
+        <ul>
+            <li>26/06/2025 à 10:54 - Adresse IP : 192.168.1.10</li>
+            <li>25/06/2025 à 16:22 - Adresse IP : 192.168.1.15</li>
+            <li>24/06/2025 à 09:48 - Adresse IP : 192.168.1.20</li>
+        </ul>
+    </main>
+</body>
+</html>
