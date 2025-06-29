@@ -9,19 +9,24 @@
 </head>
 <body>
 
-<header>
-    <div class="logo">CleanBox</div>
-</header>
+ <header>
+        <div class="logo">CleanBox</div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Accueil</a></li>
+                <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+                <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="container">
-
-    <!-- Sidebar gauche -->
+    <!-- Sidebar -->
     <aside class="sidebar">
         <ul>
-            <li><a href="{% url 'nouveau_message' %}">✉️ Nouveau message</a></li>
-            <li><a href="{% url 'messages_envoyes' %}">📤 Messages envoyés</a></li>
+            <li><a href="{% url 'nouveau_message' %}">📨 Nouveau message</a></li>
+            <li><a href="{% url 'messages_envoyes' %}">🆕 Messages envoyés</a></li>
             <li><a href="{% url 'fichiers_scannes' %}">🛡️ Fichiers scannés</a></li>
-            <li><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
+            <li class="active"><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
             <li><a href="{% url 'parametres' %}">⚙️ Paramètres</a></li>
             <li><a href="{% url 'deconnexion' %}">🚪 Déconnexion</a></li>
         </ul>
