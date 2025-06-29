@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CleanBox - Paramètres du compte</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/parametre_compte.css' %}">
+</head>
+<body>
+
+    <header>
+        <div class="logo">CleanBox</div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Accueil</a></li>
+                <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+                <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="{% url 'nouveau_message' %}">📨 Nouveau message</a></li>
+            <li><a href="{% url 'messages_envoyes' %}">🆕 Messages envoyés</a></li>
+            <li><a href="{% url 'fichiers_scannes' %}">🛡️ Fichiers scannés</a></li>
+            <li class="active"><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
+            <li><a href="{% url 'parametres' %}">⚙️ Paramètres</a></li>
+            <li><a href="{% url 'deconnexion' %}">🚪 Déconnexion</a></li>
+        </ul>
+    </aside>
+
+
+    <main>
+        <h2>Paramètres du compte</h2>
+
+        <div class="account-box">
+            <h3>Informations personnelles</h3>
+            <ul>
+                <li><strong>Nom d'utilisateur :</strong> {{ user.username }}</li>
+                <li><strong>Email :</strong> {{ user.email }}</li>
+                <li><strong>Date d'inscription :</strong> {{ user.date_joined|date:"d/m/Y" }}</li>
+            </ul>
+
+            <div class="actions">
+                <a href="#" class="btn">Modifier les informations</a>
+                <a href="#" class="btn">Changer le mot de passe</a>
+            </div>
+        </div>
+
+        <div class="account-box">
+            <h3>Préférences</h3>
+            <p>Choisissez comment recevoir les alertes de sécurité, les notifications par email, etc.</p>
+            <a href="#" class="btn">Gérer les préférences</a>
+        </div>
+
+        <div class="account-box">
+            <h3>Sécurité du Compte</h3>
+            <p>Dernière modification de mot de passe : 12/06/2025</p>
+            <p>Dernière connexion : Aujourd'hui</p>
+            <a href="#" class="btn">Voir l'historique des connexions</a>
+        </div>
+
+    </main>
+
+</body>
+</html>

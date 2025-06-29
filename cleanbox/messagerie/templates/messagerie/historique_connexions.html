@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique des Connexions - CleanBox</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/historique_connexion.css' %}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">CleanBox</div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Accueil</a></li>
+                <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+                <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="{% url 'nouveau_message' %}">📨 Nouveau message</a></li>
+            <li><a href="{% url 'messages_envoyes' %}">🆕 Messages envoyés</a></li>
+            <li><a href="{% url 'fichiers_scannes' %}">🛡️ Fichiers scannés</a></li>
+            <li class="active"><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
+            <li><a href="{% url 'parametres' %}">⚙️ Paramètres</a></li>
+            <li><a href="{% url 'deconnexion' %}">🚪 Déconnexion</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <h1>📋 Historique des Connexions</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date & Heure</th>
+                    <th>Adresse IP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>26/06/2025 à 10:54</td>
+                    <td>192.168.1.10</td>
+                </tr>
+                <tr>
+                    <td>25/06/2025 à 16:22</td>
+                    <td>192.168.1.15</td>
+                </tr>
+                <tr>
+                    <td>24/06/2025 à 09:48</td>
+                    <td>192.168.1.20</td>
+                </tr>
+                <!-- Plus tard, ici tu afficheras les vraies connexions depuis le back-end -->
+            </tbody>
+        </table>
+
+    </main>
+
+</body>
+</html>

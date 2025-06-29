@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fichiers scannés - CleanBox</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/fichiers_scannes.css' %}">
+</head>
+<body>
+
+ <header>
+        <div class="logo">CleanBox</div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'dashboard' %}">Accueil</a></li>
+                <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+                <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="{% url 'nouveau_message' %}">📨 Nouveau message</a></li>
+            <li><a href="{% url 'messages_envoyes' %}">🆕 Messages envoyés</a></li>
+            <li><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
+            <li class="active"><a href="{% url 'fichiers_scannes' %}">🛡️ Fichiers scannés</a></li>
+            <li><a href="{% url 'parametres' %}">⚙️ Paramètres</a></li>
+            <li><a href="{% url 'deconnexion' %}">🚪 Déconnexion</a></li>
+        </ul>
+    </aside>
+
+<main>
+    <h1>🛡️ Fichiers scannés</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nom du fichier</th>
+                <th>Statut</th>
+                <th>Date d'analyse</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>rapport.pdf</td>
+                <td>Sain ✅</td>
+                <td>26/06/2025</td>
+            </tr>
+            <tr>
+                <td>budget.xlsx</td>
+                <td>Malware détecté ❌</td>
+                <td>25/06/2025</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
+
+</body>
+</html>

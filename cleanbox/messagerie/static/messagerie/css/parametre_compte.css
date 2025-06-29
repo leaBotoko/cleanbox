@@ -104,19 +104,55 @@ table tr:hover {
     background-color: #f1f9ff;
 }
 
-.message-list {
+main {
+    margin-left: 220px;
+    padding: 2rem;
+    background-color: #f9fbfd;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #007acc;
+    margin-bottom: 1rem;
+}
+
+.account-box {
     background: white;
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.account-box h3 {
+    color: #005f99;
+    margin-bottom: 0.8rem;
+}
+
+.account-box ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
-.message-list li {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #ddd;
+.account-box li {
+    margin-bottom: 0.5rem;
 }
 
-.message-list li:last-child {
-    border-bottom: none;
+.actions {
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007acc;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-right: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #005f99;
 }

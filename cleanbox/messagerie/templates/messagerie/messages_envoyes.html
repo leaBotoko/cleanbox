@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages envoyés - CleanBox</title>
+    <link rel="stylesheet" href="{% static 'messagerie/css/messages_envoyes.css'%}">
+</head>
+<body>
+
+<header>
+    <div class="logo">CleanBox</div>
+    <nav>
+        <ul>
+            <li><a href="{% url 'dashboard' %}">Accueil</a></li>
+            <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+            <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="sidebar">
+    <ul>
+        <li><a href="{% url 'nouveau_message' %}">📨 Nouveau message</a></li>
+        <li class="active"><a href="{% url 'messages_envoyes' %}">🆕 Messages envoyés</a></li>
+        <li><a href="{% url 'fichiers_scannes' %}">🛡️ Fichiers scannés</a></li>
+        <li><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
+        <li><a href="{% url 'parametres' %}">⚙️ Paramètres</a></li>
+        <li><a href="{% url 'deconnexion' %}">🚪 Déconnexion</a></li>
+    </ul>
+</aside>
+
+<main>
+    <h1>📤 Messages envoyés</h1>
+    <ul class="message-list">
+        <li>📧 À : user1@example.com — Objet : Rapport mensuel</li>
+        <li>📧 À : user2@example.com — Objet : Réunion de suivi</li>
+        <li>📧 À : user3@example.com — Objet : Rapport de sécurité</li>
+    </ul>
+</main>
+
+</body>
+</html>
