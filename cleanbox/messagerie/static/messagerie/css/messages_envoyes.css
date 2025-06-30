@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
+    top: 30;
     left: 0;
     height: 60px;
     z-index: 10;

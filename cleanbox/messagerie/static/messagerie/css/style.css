@@ -1,4 +1,4 @@
-/* Reset simple */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body */
+
 body {
   background-color: #f4faff;
   color: #333;
@@ -15,7 +15,7 @@ body {
   flex-direction: column;
 }
 
-/* Navbar header */
+
 header {
       background-color: #007acc;
       color: white;
@@ -109,7 +109,7 @@ button:hover {
   background-color: #007acc;
 }
 
-/* Footer */
+
 footer {
   background-color:  #007acc;
   color: white;

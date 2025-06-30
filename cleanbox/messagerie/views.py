@@ -23,7 +23,7 @@ from django.shortcuts import render
 
 
 # Vue pour le dashboard utilisateur
-#@login_required
+@login_required
 def dashboard(request):
     return render(request, 'messagerie/dashboard.html')
 def nouveau_message(request):
@@ -57,6 +57,7 @@ def parametres(request):
 def deconnexion(request):
     # Déconnecte l'utilisateur et redirige vers la page de connexion
     return redirect('connexion')
+
 
 
 

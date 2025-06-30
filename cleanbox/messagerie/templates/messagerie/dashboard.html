@@ -2,48 +2,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CleanBox - Dashboard</title>
-    <link rel="stylesheet" href="{% static 'messagerie/css/dashboard.css' %}">
+  <meta charset="UTF-8">
+  <title>Tableau de bord - CleanBox</title>
+  <link rel="stylesheet" href="{% static 'messagerie/css/dashboard.css' %}">
 </head>
 <body>
 
-    <header>
-        <div class="logo">CleanBox</div>
-        <div class="user-actions">
-              <a href="#">Accueil</a>
-            <a href="#">Paramètres</a>
-            <a href="#">Déconnexion</a>
-vyµ*    </header>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">CleanBox</div>
+    <nav>
+      <ul>
+        <li><a href="{% url 'accueil' %}">Accueil</a></li>
+        <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+        <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="container">
+  <div class="container">
 
-        <!-- ✅ Sidebar à gauche -->
-        <aside class="sidebar">
-            <ul>
-                <li><a href="">📨 Messages envoyés</a></li>
-                <li><a href="">🛡️ Fichiers scannés</a></li>
-                <li><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
-                <li><a href="#">⚙️ Paramètres</a></li>
-                <li><a href="#">🚪 Déconnexion</a></li>
-               
-            </ul>
-        </aside>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <ul>
+        <li class="active"><a href="{% url 'dashboard' %}">Tableau de bord</a></li>
+        <li><a href="{% url 'nouveau_message' %}">Nouveau message</a></li>
+        <li><a href="{% url 'messages_envoyes' %}">Messages envoyés</a></li>
+        <li><a href="{% url 'fichiers_scannes' %}">Fichiers scannés</a></li>
+        <li><a href="{% url 'historiques_connexion' %}">Connexions</a></li>
+        <li><a href="{% url 'parametres' %}">Paramètres</a></li>
+        <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+      </ul>
+    </aside>
 
-        <!-- ✅ Contenu principal à droite -->
-        <main class="main-content">
-            <h1>Bienvenue dans votre tableau de bord</h1>
-            <p>Depuis cet espace, vous pouvez suivre l'activité de votre compte.</p>
+    <!-- MAIN -->
+    <main>
+      <section class="welcome">
+        <h1>Bienvenue, <span>{{ request.user.username }}</span> !</h1>
+        <p>Voici votre résumé :</p>
+      </section>
 
-            <div class="stats">
-                <div class="stat">📨 Messages envoyés : 12</div>
-                <div class="stat">🛡️ Fichiers scannés : 8</div>
-                <div class="stat">⏰ Dernière connexion : Aujourd'hui</div>
-            </div>
-        </main>
+      <section class="stats">
+        <div class="card">
+          <div class="icon">📤</div>
+          <div class="text">
+            <div class="number">{{ nb_messages }}</div>
+            <div class="label">Messages envoyés</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon"></div>
+          <div class="text">
+            <div class="number">{{ nb_fichiers }}</div>
+            <div class="label">Fichiers scannés</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="icon"></div>
+          <div class="text">
+            <div class="number">{{ derniere_connexion|date:"d/m/Y H:i" }}</div>
+            <div class="label">Dernière connexion</div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    </div>
+  </div>
 
 </body>
 </html>

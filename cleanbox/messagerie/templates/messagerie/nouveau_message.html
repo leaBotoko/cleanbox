@@ -3,71 +3,60 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📨 Nouveau Message - CleanBox</title>
+    <title> Nouveau message - CleanBox</title>
     <link rel="stylesheet" href="{% static 'messagerie/css/nouveau_message.css' %}">
 </head>
 <body>
 
- <header>
+    
+    <header>
         <div class="logo">CleanBox</div>
         <nav>
             <ul>
-                <li><a href="{% url 'dashboard' %}">Accueil</a></li>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
                 <li><a href="{% url 'parametres' %}">Paramètres</a></li>
                 <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <ul>
-            <li><a href="{% url 'nouveau_message' %}">📨 Nouveau message</a></li>
-            <li><a href="{% url 'messages_envoyes' %}">🆕 Messages envoyés</a></li>
-            <li><a href="{% url 'fichiers_scannes' %}">🛡️ Fichiers scannés</a></li>
-            <li class="active"><a href="{% url 'historiques_connexion' %}">⏰ Historique connexions</a></li>
-            <li><a href="{% url 'parametres' %}">⚙️ Paramètres</a></li>
-            <li><a href="{% url 'deconnexion' %}">🚪 Déconnexion</a></li>
-        </ul>
-    </aside>
+    <div class="container">
 
-    <!-- Zone principale -->
-    <main class="main-content">
-        <h2>✉️ Rédiger un nouveau message</h2>
+        <aside class="sidebar">
+            <ul>
+                <li class="active"><a href="{% url 'nouveau_message' %}"> Nouveau message</a></li>
+                <li><a href="{% url 'messages_envoyes' %}">Messages envoyés</a></li>
+                <li><a href="{% url 'fichiers_scannes' %}">Fichiers scannés</a></li>
+                <li><a href="{% url 'historiques_connexion' %}">Historique connexions</a></li>
+                <li><a href="{% url 'parametres' %}"> Paramètres</a></li>
+                <li><a href="{% url 'deconnexion' %}">Déconnexion</a></li>
+            </ul>
+        </aside>
 
-        <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            
-            <div class="form-group">
-                <label for="destinataire">👤 Destinataire :</label>
-                <input type="text" id="destinataire" name="destinataire" placeholder="Nom d'utilisateur">
+        
+        <main>
+            <div class="main-form">
+                <h1> Nouveau message</h1>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="destinataire"> Destinataire :</label>
+                    <input type="text" id="destinataire" name="destinataire" placeholder="Nom du destinataire">
+
+                    <label for="objet">Objet :</label>
+                    <input type="text" id="objet" name="objet" placeholder="Sujet du message">
+
+                    <label for="contenu">💬 Message :</label>
+                    <textarea id="contenu" name="contenu" rows="4" placeholder="Écrivez votre message ici..."></textarea>
+
+                    <label for="fichier"> Joindre un fichier :</label>
+                    <input type="file" id="fichier" name="fichier">
+
+                    <button type="submit"> Envoyer</button>
+                </form>
             </div>
+        </main>
 
-            <div class="form-group">
-                <label for="objet">📝 Objet :</label>
-                <input type="text" id="objet" name="objet" placeholder="Sujet du message">
-            </div>
-
-            <div class="form-group">
-                <label for="contenu">💬 Message :</label>
-                <textarea id="contenu" name="contenu" rows="6" placeholder="Écrivez votre message ici..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="fichier">📎 Joindre un fichier :</label>
-                <input type="file" id="fichier" name="fichier">
-            </div>
-
-            <button type="submit" class="btn">📤 Envoyer</button>
-        </form>
-    </main>
-
-</div>
-
-<footer>
-    &copy; 2025 CleanBox - Tous droits réservés.
-</footer>
+    </div>
 
 </body>
 </html>
