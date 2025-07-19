@@ -31,11 +31,15 @@
 </aside>
 
 <main>
-    <h1> Messages envoyés</h1>
-    <ul class="message-list">
-        <li> À : user1@example.com — Objet : Rapport mensuel</li>
-       
-    </ul>
+    <h1>Messages envoyés</h1>
+<ul>
+    {% for msg in messages %}
+        <li>{{ msg.objet }} - envoyé  envoyé à {{ msg.destinataire.username }}</li>
+    {% empty %}
+        <li>Aucun message envoyé.</li>
+    {% endfor %}
+</ul>
+
 </main>
 
 </body>
