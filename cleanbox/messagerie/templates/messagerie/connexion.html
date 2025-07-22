@@ -23,7 +23,7 @@
 <main class="container">
   <h2>Connexion</h2>
 
-  <form method="post" action="">
+ <form method="POST" action="{% url 'connexion' %}">
     {% csrf_token %}
     <label for="username">Nom d'utilisateur :</label>
     <input type="text" id="username" name="username" required />

@@ -1,58 +1,51 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Inscription - CleanBox</title>
-  <link rel="stylesheet" href="{% static 'messagerie/css/style.css' %}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inscription - CleanBox</title>
+  <link rel="stylesheet" href="{% static 'messagerie/css/connexion.css' %}" />
 </head>
 <body>
 
-
-  <header>
-  <div class="logo">CleanBox</div>
-  <nav>
-    <ul>
+<header>
+  <nav class="navbar">
+    <div class="nav-left">CleanBox</div>
+    <ul class="nav-right">
       <li><a href="{% url 'accueil' %}">Accueil</a></li>
       <li><a href="{% url 'connexion' %}">Connexion</a></li>
-      <li><a href="{% url 'inscription' %}">Inscription</a></li>
+      <li><a href="{% url 'inscription' %}" class="active">Inscription</a></li>
     </ul>
   </nav>
 </header>
 
-  
-  <main>
-    <div class="container inscription-container">
-      <h1>Créer un compte</h1>
-      <form method="post" novalidate>
-        {% csrf_token %}
-        
-        <label for="id_username">Nom d’utilisateur</label>
-        {{ form.username }}
+<main class="container">
+  <h2>Inscription</h2>
 
-        <label for="id_email">Adresse email</label>
-        {{ form.email }}
+ <form method="POST" action="{% url 'inscription' %}">
+    {% csrf_token %}
+    
+    <label for="username">Nom d'utilisateur :</label>
+    <input type="text" id="username" name="username" required />
 
-        <label for="id_password1">Mot de passe</label>
-        {{ form.password1 }}
+    <label for="email">Adresse e-mail :</label>
+    <input type="email" id="email" name="email" required />
 
-        <label for="id_password2">Confirmer le mot de passe</label>
-        {{ form.password2 }}
+    <label for="password1">Mot de passe :</label>
+    <input type="password" id="password1" name="password1" required />
 
-        <button type="submit">S’inscrire</button>
-      </form>
-    </div>
-  </main>
+    <label for="password2">Confirmer le mot de passe :</label>
+    <input type="password" id="password2" name="password2" required />
 
-  
-  <footer>
-    <div class="footer-content">
-      <p>Contactez-nous : contact@cleanbox.com | +243 83 25 68 228</p>
-      <p>© 2025 CleanBox. Tous droits réservés.</p>
-    </div>
-  </footer>
+    <button type="submit">S'inscrire</button>
+    
+  </form>
+</main>
+
+<footer>
+  &copy; 2025 CleanBox - Tous droits réservés
+</footer>
 
 </body>
 </html>
